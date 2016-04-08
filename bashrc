@@ -9,4 +9,8 @@ shopt -s cdspell
 
 # export the prompt - 2016-02-12
 #PS1="[\e[1;35m\u\e[m@\e[1;34m\h\e[m \w] \n\$ "
-PS1="\e[1;35m\u\e[m@\e[1;34m\h\e[m \w \$ "
+#PS1="\e[1;35m\u\e[m@\e[1;34m\h\e[m \w \$ "
+
+# Prompt updated - 2016-04-08
+PS1="\e[1;34m\h\e[m \W \$ "
+
