@@ -40,6 +40,12 @@ set shiftwidth=2
 "Let backspace do its thang
 set backspace=indent,eol,start
 
+" Handle long lines
+set wrap linebreak nolist
+set textwidth=79
+set formatoptions=qrnl
+
+
 " Sayonara. Will check it out some day.
 " nnoremap <silent> <leader>q :Sayonara<CR>
 
@@ -112,10 +118,17 @@ nmap <leader>w :w!<cr>
 " Center the screen
 nnoremap <space> zz
 
+"2 spaces in yaml and package.json
+augroup yaml
+	autocmd!
+	autocmd Filetype yaml setlocal tabstop=2 expandtab shiftwidth=2
+	autocmd BufNewFile,BufRead,BufWrite package.json setlocal tabstop=2 expandtab shiftwidth=2
+augroup END
+
 
 " ==================== Fugitive ====================
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gp :Gpush<CR>
-vnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gb :Gblame<CR>
 
