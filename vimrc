@@ -14,7 +14,7 @@ let g:mapleader = ","
 " --- Color scheme ---
 
 " colorscheme badwolf 
-set background=dark
+set background=light
 colorscheme solarized
 let g:airline_powerline_fonts = 1
 let g:solarized_termcolors = 256
@@ -26,7 +26,7 @@ syntax enable
 set tabstop=4
 set expandtab
 set showcmd
-set cursorline
+" set cursorline
 set wildmenu
 set lazyredraw 
 set showmatch
@@ -42,9 +42,12 @@ set backspace=indent,eol,start
 
 " Handle long lines
 set wrap linebreak nolist
-set textwidth=79
+" set textwidth=79
 set formatoptions=qrnl
 
+" More sets
+set clipboard=unnamed 
+" set listchars=tab:▸\ ,trail:▫
 
 " Sayonara. Will check it out some day.
 " nnoremap <silent> <leader>q :Sayonara<CR>
@@ -107,6 +110,16 @@ noremap <Leader>f :NERDTreeFind<cr>
 " --- VIM Airline
 " git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline
 
+" cd ~/.vim
+" git clone https://github.com/ctrlpvim/ctrlp.vim.git bundle/ctrlp.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+:helptags ~/.vim/bundle/ctrlp.vim/doc
+
+" Key bindings for Ctrl P
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+
 " Mouse
 if has('mouse')
   set mouse=a
@@ -123,6 +136,7 @@ au BufNewFile,BufRead *.vim setlocal noet ts=4 sw=4 sts=4
 au BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
 au BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
 au BufNewFile,BufRead *.yml setlocal expandtab ts=2 sw=2
+au BufNewFile,BufRead *.py setlocal expandtab ts=8 et sw=4 sts=4
 
 "2 spaces in yaml and package.json
 augroup yaml
