@@ -146,6 +146,21 @@ augroup yaml
 augroup END
 
 
+" -- Syntastic 
+" https://github.com/scrooloose/syntastic
+" Installation with Pathogen 
+" cd ~/.vim/bundle && git clone --depth=1 https://github.com/scrooloose/syntastic.git
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
 " ==================== Fugitive ====================
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
