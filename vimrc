@@ -135,6 +135,7 @@ nnoremap <space> zz
 au BufNewFile,BufRead *.vim setlocal noet ts=4 sw=4 sts=4
 au BufNewFile,BufRead *.txt setlocal noet ts=4 sw=4
 au BufNewFile,BufRead *.md setlocal noet ts=4 sw=4
+au BufNewFile,BufRead *.sh setlocal noet ts=4 sw=4
 au BufNewFile,BufRead *.yml setlocal expandtab ts=2 sw=2
 au BufNewFile,BufRead *.py setlocal expandtab ts=8 et sw=4 sts=4
 
@@ -159,6 +160,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" ---- Vim gutter plugin
+" https://github.com/airblade/vim-gitgutter
+set updatetime=250
+let g:gitgutter_sign_column_always = 1
+let g:gitgutter_max_signs = 500  " default value
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
 
 
 " ==================== Fugitive ====================
