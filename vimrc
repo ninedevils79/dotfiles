@@ -4,6 +4,21 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+" ----- Ctrl W mappings -----
+" -- Scroll through windows
+:map <F3> <C-W>w
+
+" -- resize the split
+" -- To quickly resize windows with a vertical split: 
+:map - <C-W>-
+:map + <C-W>+
+
+" -- Alt Arrow Navigation
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
 " --- Run Pathogen ---
 execute pathogen#infect()
 
@@ -118,6 +133,12 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Key bindings for Ctrl P
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+" Set no max file limit
+let g:ctrlp_max_files = 0
+" Search from current directory instead of project root
+let g:ctrlp_working_path_mode = 0
+" Ctrl + v = Vsplit
+" Ctrl + X = Hsplit
 
 
 " Mouse
