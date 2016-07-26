@@ -56,6 +56,15 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+" -- Cycle through tabs
+" -- http://vim.wikia.com/wiki/Using_tab_pages
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+set switchbuf=usetab
+nnoremap <F8> :sbnext<CR>
+nnoremap <S-F8> :sbprevious<CR>
+
+
 " --- Run Pathogen 
 execute pathogen#infect()
 
@@ -98,6 +107,11 @@ set formatoptions=qrnl
 " - More sets
 set clipboard=unnamed 
 " -  set listchars=tab:▸\ ,trail:▫
+
+" - Tabs
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 
 " --- Sayonara. Will check it out some day.
 " --- nnoremap <silent> <leader>q :Sayonara<CR>
@@ -219,5 +233,6 @@ let g:gitgutter_eager = 0
 nnoremap <leader>ga :Git add %:p<CR><CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>gc :Gcommit<CR>
 vnoremap <leader>gb :Gblame<CR>
 
