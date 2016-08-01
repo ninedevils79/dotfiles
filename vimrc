@@ -64,6 +64,12 @@ set switchbuf=usetab
 nnoremap <F8> :sbnext<CR>
 nnoremap <S-F8> :sbprevious<CR>
 
+" -- Fold 
+set foldmethod=manual
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
 
 " --- Run Pathogen 
 execute pathogen#infect()
@@ -74,8 +80,9 @@ let g:mapleader = ","
 
 " --- Color scheme 
 " - colorscheme badwolf 
-set background=light
-colorscheme solarized
+set background=dark
+" - colorscheme solarized
+colorscheme gruvbox
 let g:airline_powerline_fonts = 1
 let g:solarized_termcolors = 256
 let g:solarized_termtrans=1
