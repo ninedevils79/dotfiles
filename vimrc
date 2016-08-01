@@ -178,13 +178,25 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " - Key bindings for Ctrl P
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+" - Start CtrlP in Mixed mode
+let g:ctrlp_cmd = 'CtrlPMixed'
 " - Set no max file limit
 let g:ctrlp_max_files = 0
 " - Search from current directory instead of project root
 let g:ctrlp_working_path_mode = 0
 " - Ctrl + v = Vsplit
 " - Ctrl + X = Hsplit
+" - Disable cache
+let g:ctrlp_use_caching = 1
 
+" -- Buffer Navigation
+" - Switch to alternate file
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+" Try out Tab for cycling buffers. If I don't like it, then I will change to
+" F12
+" - map <F12> :bnext<cr>
+" - map <S-F12> :bprevious<cr>
 
 " --- Mouse
 if has('mouse')
@@ -242,4 +254,3 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>gc :Gcommit<CR>
 vnoremap <leader>gb :Gblame<CR>
-
