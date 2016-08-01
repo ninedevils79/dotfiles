@@ -97,6 +97,7 @@ set wildmenu
 set lazyredraw 
 set showmatch
 set ruler
+set hidden
 
 set laststatus=2
 set noshowmode
